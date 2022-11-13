@@ -1,0 +1,13 @@
+version: '3'
+services:
+  docker-js-dev:
+    image: node:latest
+    volumes:
+      - ./src:/src
+      - ./scripts:/scripts
+    working_dir: /src
+    command: /scripts/start.sh
+    ports:
+      - 1234:1234
+    environment:
+      DOCKER_GATEWAY_HOST: ${DOCKER_GATEWAY_HOST:-host.docker.internal}
