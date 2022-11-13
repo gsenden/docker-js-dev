@@ -12,4 +12,5 @@ fi
 # Add / Change start command
 SERVER=http://$DOCKER_GATEWAY_HOST:1234
 echo Server running at $SERVER
-npx parcel /src/index.html
+echo HMR port: 1235
+npx parcel /src/index.html --hmr-port 1235
