@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=/scripts/dev-container-initialized
+FILE=/src/.dev-container-initialized
 if test -f "$FILE"; then
   echo "Container was previously initialized"
 else 
@@ -13,4 +13,4 @@ fi
 SERVER=http://$DOCKER_GATEWAY_HOST:1234
 echo Server running at $SERVER
 echo HMR port: 1235
-npx parcel /src/index.html 
+npx parcel /src/index.html --hmr-port 1235
