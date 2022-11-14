@@ -9,6 +9,10 @@ else
   echo "Container initialization - finished"
 fi
 
+
+# Change launch.json to use IP of Docker host
+sed -i -e 's/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/'"$DOCKER_GATEWAY_HOST"'/g' /.vscode/launch.json
+
 # Add / Change start command
 SERVER=http://$DOCKER_GATEWAY_HOST:1234
 echo Server running at $SERVER

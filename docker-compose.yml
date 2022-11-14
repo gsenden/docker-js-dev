@@ -5,6 +5,7 @@ services:
     volumes:
       - ./src:/src
       - ./scripts:/scripts
+      - ./.vscode:/.vscode
     working_dir: /src
     command: /scripts/start.sh
     ports:
